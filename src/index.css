@@ -182,3 +182,82 @@ h3 {
 /* --- ESTILOS ESPECÍFICOS IS-LM --- */
 .is-btn { border-left: 4px solid #2563eb; }
 .lm-btn { border-left: 4px solid #dc2626; }
+
+/* --- RESPONSIVIDADE (TABLET E MOBILE) --- */
+
+/* Ajustes para Tablet (telas até 1024px) */
+@media (max-width: 1024px) {
+  .page-container {
+    grid-template-columns: 300px 1fr; /* Sidebar um pouco menor */
+  }
+  
+  .chart-container {
+    padding: 1rem;
+  }
+}
+
+/* Ajustes para Mobile (telas até 768px) */
+@media (max-width: 768px) {
+  .app-wrapper {
+    height: auto; /* Permite scroll infinito na página toda */
+    overflow-y: auto;
+  }
+
+  .page-container {
+    display: flex;
+    flex-direction: column; /* Empilha controles e gráfico */
+    overflow: visible;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    height: auto; /* Sidebar não trava mais a altura */
+    overflow-y: visible;
+    padding: 1rem;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 450px; /* Altura fixa para o gráfico no mobile */
+    padding: 1rem 0.5rem;
+  }
+
+  .chart-wrapper {
+    min-height: 350px; /* Garante que o gráfico apareça no mobile */
+  }
+
+  .global-nav {
+    flex-wrap: wrap; /* Botões quebram linha se necessário */
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .global-nav button {
+    flex: 1; /* Botões ocupam larguras iguais */
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .grid-inputs {
+    grid-template-columns: 1fr 1fr; /* Mantém duas colunas nos inputs */
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+/* Ajustes para celulares muito pequenos (até 480px) */
+@media (max-width: 480px) {
+  .grid-inputs {
+    grid-template-columns: 1fr; /* Inputs viram uma coluna só */
+  }
+  
+  .chart-container {
+    height: 400px;
+  }
+}
