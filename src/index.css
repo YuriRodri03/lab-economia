@@ -1,0 +1,184 @@
+/* --- RESET E VARIÁVEIS --- */
+:root {
+  --bg-app: #f8fafc;
+  --bg-sidebar: #ffffff;
+  --primary: #2563eb;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+/* --- LAYOUT DO MAIN.JSX --- */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.global-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #1e293b;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.global-nav button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #334155;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.global-nav button.active {
+  background: var(--primary);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+/* --- ESTRUTURA DAS PÁGINAS (Demanda e IS-LM) --- */
+.page-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px); /* Altura da tela menos o menu */
+  padding: 2rem;
+}
+
+.chart-wrapper {
+  display: flex;
+  flex: 1; /* Faz ele ocupar todo o espaço disponível */
+  min-height: 500px; /* Altura mínima de segurança */
+  width: 100%;
+}
+
+/* --- COMPONENTES DA SIDEBAR --- */
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-curva {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.input-nome {
+  background: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  width: 80%;
+  outline: none;
+}
+
+.grid-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* --- BOTÕES --- */
+.btn-add {
+  width: 100%;
+  padding: 10px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.btn-add.small {
+  width: auto;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.btn-remove {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove:hover {
+  background: #fecaca;
+}
+
+/* --- ESTILOS ESPECÍFICOS IS-LM --- */
+.is-btn { border-left: 4px solid #2563eb; }
+.lm-btn { border-left: 4px solid #dc2626; }
